@@ -7,3 +7,50 @@
     border: #e4dfdf solid 1px;
     border-radius: 10px;
 }
+
+input::placeholder {
+  color: #D9D9D9; /* لون الـ placeholder */
+  font-family: 'Inter', sans-serif; /* الخط */
+  font-size: 16px; /* حجم الخط */
+  font-weight: 400; /* وزن الخط */
+  line-height: normal; /* ارتفاع السطر */
+}
+
+
+#\:R79j6H1\:{
+  background-color: transparent;
+}
+
+#\:R79j6H1\: > span > svg {
+  color: black !important; /* أو أي لون تريده */
+}
+
+.active{
+  color: #FF9900 !important;
+}
+
+body > nav > div > div > ul{
+align-items: center;
+}
+
+body > nav > div{
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+body > div > div > div > ul{
+  margin: -15px 0 !important;
+}
+
+body > div > div > div > ul > li{
+width: 16px;
+height: 16px;
+background-color: #D9D9D9;
+border-radius: 50px;
+}
+
+.card-hover:hover {
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+  z-index: 10; /* تأكد من أن العنصر يظهر فوق العناصر الأخرى */
+}
