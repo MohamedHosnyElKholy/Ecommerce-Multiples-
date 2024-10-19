@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Provider } from 'react-redux';
-import store from './store'; // تأكد من المسار الصحيح
+import {store} from '@/store'; // تأكد من المسار الصحيح
 
 const ReduxProvider = ({ children }) => {
   return <Provider store={store}>{children}</Provider>;
