@@ -2,22 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@import 'flowbite';
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.card
+{
+    border: #e4dfdf solid 1px;
+    border-radius: 10px;
 }
