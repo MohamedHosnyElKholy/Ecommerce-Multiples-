@@ -1,6 +1,7 @@
 import "./globals.css";
 import ReduxProvider from "./feature/ReduxProvider";
 import { Inter } from 'next/font/google';
+import MyNavbar from "@/components/MyNavbar";
 
 const inter = Inter({ subsets: ['latin'], weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'] });
 
