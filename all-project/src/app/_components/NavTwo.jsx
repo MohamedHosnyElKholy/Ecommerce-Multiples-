@@ -13,10 +13,10 @@ export default function NavTwo() {
       fluid
       rounded
       style={{ padding: "10px 9px", backgroundColor: "white" }}
-      className="flex justify-center items-center"
+      className="flex justify-center items-center secondNav "
     >
       <Navbar.Toggle onClick={() => setNavbarOpen(!navbarOpen)} />
-      <Navbar.Collapse className={`flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 items-center ${navbarOpen ? "block" : "hidden"}`}>
+      <Navbar.Collapse className={`flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4  ${navbarOpen ? "block" : "hidden"}`}>
         <Navbar.Link
           href="/"
           className={`text-[18px] text-black py-[8px] px-[16px] ${pathname === "/" ? "active font-bold" : ""}`}
