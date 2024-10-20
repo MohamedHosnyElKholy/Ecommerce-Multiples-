@@ -34,8 +34,7 @@ align-items: center;
 }
 
 body > nav > div{
-  margin-right: 0 !important;
-  margin-left: 0 !important;
+  margin-inline: auto !important;
 }
 
 body > div > div > div > ul{
