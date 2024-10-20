@@ -17,7 +17,7 @@ export default function Header() {
           </p>
           <button
             type="button"
-            class="focus:outline-none text-white  bg-[#FF9900] hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-bold rounded-[4px] text-sm px-[24px] py-[16px] me-2 mb-2"
+            className="focus:outline-none text-white  bg-[#FF9900] hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-bold rounded-[4px] text-sm px-[24px] py-[16px] me-2 mb-2"
           >
             SHOP NOW
           </button>
@@ -26,6 +26,7 @@ export default function Header() {
       <div className="my-auto">
         <Image
           src={heroImg}
+          alt="heroImage"
           width={589}
           height={732}
           className="block mx-auto"

@@ -41,7 +41,7 @@ export default function Arrival() {
       };
   return (
     <>
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 py-8 my-[43px]">
         <h4 className="text-[40px] text-black font-semibold">New Arrival</h4>
         <Slider {...settings} className="mt-[20px] mb-[20px]">
           <div>

@@ -42,7 +42,7 @@ export default function Best() {
   const products = [0, 1, 2, 3, 4, 5, 6, 7, 8];
   return (
     <>
-      <div className=" container mx-auto px-4 py-8">
+      <div className=" container mx-auto px-4 py-8 my-[43px]">
         <ul className="flex space-x-6 md:space-x-20 mx-auto justify-center text-[16px] md:text-[20px] text-[#9892a6] font-bold">
           <li>LG</li>
           <li>SONY</li>
@@ -54,7 +54,7 @@ export default function Best() {
         </h1>
         <Slider {...settings}>
           {products.map((p, i) => (
-            <div className="w-1/4 p-2">
+            <div key={i} className="w-1/4 p-2">
               <div className="card p-2  py-3  ">
                 <Image
                   src={img1}

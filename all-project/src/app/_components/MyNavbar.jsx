@@ -10,7 +10,8 @@ import NavTwo from "./NavTwo";
 export default function MyNavbar() {
   return (
     <>
-      <Navbar className="bg-[#232F3E] flex justify-between items-center p-4">
+    <div className='fixed top-0 left-0 right-0 z-10'>
+      <Navbar className="bg-[#232F3E] flex justify-between items-center p-4 ">
         <Navbar.Brand className="text-white text-[32px] font-normal">
           ONE CART
         </Navbar.Brand>
@@ -34,6 +35,7 @@ export default function MyNavbar() {
         </div>
       </Navbar>
       <NavTwo />
+      </div>
     </>
   );
 }

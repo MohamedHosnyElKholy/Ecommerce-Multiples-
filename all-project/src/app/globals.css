@@ -33,7 +33,7 @@ body > nav > div > div > ul{
 align-items: center;
 }
 
-body > nav > div{
+body >div> nav > div{
   margin-inline: auto !important;
 }
 
@@ -47,7 +47,9 @@ height: 16px;
 background-color: #D9D9D9;
 border-radius: 50px;
 }
-
+ nav.secondNav > div > div > ul{
+  align-items : center;
+}
 .card-hover:hover {
   transform: scale(0.9);
   transition: transform 0.3s ease;

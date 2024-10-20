@@ -58,7 +58,7 @@ export default function MyFooter() {
           </ul>
         </div>
         <div>
-          <h5 className="font-bold mb-2 text-[22px] text-[#FF9900] mb-[50px]">
+          <h5 className="font-bold text-[22px] text-[#FF9900] mb-[50px]">
             Get in touch
           </h5>
           <div className="flex space-x-4 mb-[50px]">
