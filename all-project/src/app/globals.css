@@ -53,3 +53,10 @@ border-radius: 50px;
   transition: transform 0.3s ease;
   z-index: 10; /* تأكد من أن العنصر يظهر فوق العناصر الأخرى */
 }
+
+.register{
+  background-image: url('../../src/images/background-dark-gradient-overlay-with-grid\ 1.png');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
