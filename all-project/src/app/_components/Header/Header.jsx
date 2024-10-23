@@ -3,7 +3,7 @@ import React from "react";
 import heroImg from "@/images/imgForHeroSection.png";
 export default function Header() {
   return (
-    <div className="grid grid-cols-1 xl:grid-cols-2 px-10 h-[auto] bg-[#9BFFF84D] pt-[156px] ">
+    <div className="grid grid-cols-1 md:grid-cols-2 px-10 h-[auto] bg-[#9BFFF84D] pt-[156px] ">
       <div className=" my-auto">
         <div className="max-w-[419px] mx-auto block">
           <h1 className="xl:text-[72px] text-[42px] font-[500]  drop-shadow-[0_4px_4px_#00000040]">
