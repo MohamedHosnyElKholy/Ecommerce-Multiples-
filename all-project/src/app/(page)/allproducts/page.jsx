@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
 import Slider from "react-slick";
+import { AiFillStar, AiOutlineStar } from "react-icons/ai";
+
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { Button, Card, Label, Radio, RangeSlider, Select, Pagination } from "flowbite-react";
 import Image from "next/image";
@@ -80,7 +82,67 @@ export default function AllProducts() {
           </div>
           <RangeSlider id="price-range" sizing="lg" />
           <h4 className="text-black text-xl font-bold mb-3">Customer Reviews:</h4>
-          {/* Add customer reviews here */}
+          <div className="flex items-center gap-2 mb-3">
+            <Radio id="allProduct" name="category" value="all" />
+            <Label htmlFor="allProduct" className="text-black text-lg font-normal">All Products</Label>
+          </div>
+          <div className="flex items-center gap-6">
+            <div className="flex gap-3">
+              <AiFillStar className="text-[#F90]"/>
+              <AiFillStar className="text-[#F90]"/>
+              <AiFillStar className="text-[#F90]"/>
+              <AiFillStar className="text-[#F90]"/>
+              <AiOutlineStar/>
+            </div>
+            <p className="text-[22px] font-normal  text-black">& Up</p>
+          </div>
+          <div className="flex items-center gap-6">
+            <div className="flex gap-3">
+              <AiFillStar className="text-[#F90]"/>
+              <AiFillStar className="text-[#F90]"/>
+              <AiFillStar className="text-[#F90]"/>
+              <AiOutlineStar/>
+              <AiOutlineStar/>
+            </div>
+            <p className="text-[22px] font-normal  text-black">& Up</p>
+          </div>
+          <div className="flex items-center gap-6">
+            <div className="flex gap-3">
+              <AiFillStar className="text-[#F90]"/>
+              <AiFillStar className="text-[#F90]"/>
+              <AiOutlineStar/>
+              <AiOutlineStar/>
+              <AiOutlineStar/>
+            </div>
+            <p className="text-[22px] font-normal  text-black">& Up</p>
+          </div>
+          <div className="flex items-center gap-6">
+            <div className="flex gap-3">
+              <AiFillStar className="text-[#F90]"/>
+              <AiOutlineStar/>
+              <AiOutlineStar/>
+              <AiOutlineStar/>
+              <AiOutlineStar/>
+            </div>
+            <p className="text-[22px] font-normal  text-black">& Up</p>
+          </div>
+          <h4 className="text-black text-xl font-bold mb-3">Discount:</h4>
+          <div className="flex items-center gap-2 mb-3">
+            <Radio id="all" name="category" value="all" />
+            <Label htmlFor="all" className="text-black text-lg font-normal">All</Label>
+          </div>
+          <div className="flex items-center gap-2 mb-3">
+            <Radio id="ten" name="category" value="all" />
+            <Label htmlFor="ten" className="text-black text-lg font-normal">10% or more</Label>
+          </div>
+          <div className="flex items-center gap-2 mb-3">
+            <Radio id="tewinty" name="category" value="all" />
+            <Label htmlFor="tewinty" className="text-black text-lg font-normal">20% or more</Label>
+          </div>
+          <div className="flex items-center gap-2 mb-3">
+            <Radio id="therty" name="category" value="all" />
+            <Label htmlFor="therty" className="text-black text-lg font-normal">30% or more</Label>
+          </div>
         </div>
       </div>
       <div className="col-span-9 bg-[#eee]">
