@@ -7,6 +7,7 @@ import {
   AiOutlineSearch,
 } from "react-icons/ai";
 import NavTwo from "./NavTwo";
+import Link from "next/link";
 export default function MyNavbar() {
   return (
     <>
@@ -31,7 +32,9 @@ export default function MyNavbar() {
         </div>
         <div className="flex items-center space-x-4 ml-4">
           <AiOutlineUser className="text-2xl text-white" />
+          <Link href="/cart">
           <AiOutlineShoppingCart className="text-2xl text-white" />
+          </Link>
         </div>
       </Navbar>
       <NavTwo />
