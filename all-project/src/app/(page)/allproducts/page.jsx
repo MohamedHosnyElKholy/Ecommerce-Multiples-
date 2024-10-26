@@ -2,7 +2,6 @@
 import { useState } from "react";
 import Slider from "react-slick";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
-
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { Button, Card, Label, Radio, RangeSlider, Select, Pagination } from "flowbite-react";
 import Image from "next/image";
