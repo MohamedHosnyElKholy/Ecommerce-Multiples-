@@ -145,4 +145,30 @@ input[type='radio']:checked{
 input[type='radio']{
   background-color: #ccc !important;
 }
-
+.bestSelling{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-top: 100px solid orange; 
+  border-top-left-radius: 6px; 
+  border-left: 0px solid transparent; 
+  border-right: 100px solid transparent; 
+  border-bottom: 100px solid transparent; 
+  text-align: center;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 2;
+}
+.bestSelling::before {
+  content: "Best Selling";
+  position: absolute;
+  top: -95px; 
+  left: 6px;
+  transform: rotate(-45deg);
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+}
