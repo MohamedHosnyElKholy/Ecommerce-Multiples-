@@ -5,7 +5,7 @@ import { TextInput } from "flowbite-react";
 import { Button } from "flowbite-react";
 import { IoLogoGoogle } from "react-icons/io5";
 import { FaCcPaypal } from "react-icons/fa";
-
+import { FaRegTrashAlt } from "react-icons/fa";
 export default function Page() {
   return (
     <>
@@ -32,6 +32,9 @@ export default function Page() {
                   </th>
                   <th scope="col" className="px-4 py-3 font-normal">
                     Total Price
+                  </th>
+                  <th scope="col" className="px-4 py-3 font-normal">
+
                   </th>
                 </tr>
               </thead>
@@ -68,6 +71,11 @@ export default function Page() {
                       </div>
                     </td>
                     <td className="py-4 font-normal text-black">$560.00</td>
+                    <td className="py-4 text-[24px] text-[#FF9900]">
+                      <button>
+                      <FaRegTrashAlt />
+                      </button>
+                      </td>
                   </tr>
                 ))}
               </tbody>
