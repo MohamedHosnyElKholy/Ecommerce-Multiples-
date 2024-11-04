@@ -116,7 +116,6 @@ input[type='radio']:checked{
 
 input[type='radio']{
   background-color: #ccc !important;
-
 }
 .bestSelling{
   position: absolute;
@@ -152,3 +151,6 @@ input[type='radio']{
   background-size:cover;
   height:100vh;
 }
+
+
+
