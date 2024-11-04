@@ -176,7 +176,8 @@ export default function AllProducts() {
         <div className="flex flex-wrap justify-center gap-3 mt-6 pl-5 pr-5">
           {[...Array(8)].map((_, index) => (
             <div key={index}>
-              <Card href="#" className="max-w-xs card-hover">
+              <Card href="#" className="max-w-xs card-hover relative">
+              <div className="bestSelling"></div>
                 <Image
                   src={imageOne}
                   alt="Product Image"
