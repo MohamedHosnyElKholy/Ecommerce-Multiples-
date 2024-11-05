@@ -1,53 +1,48 @@
-'use client';
-import React from "react";
-import { Sidebar } from "flowbite-react";
-import Link from "next/link";  // استيراد مكون Link من Next.js
-import {
-  HiChartPie,  // أيقونة Dashboard
-  HiShoppingBag,  // أيقونة Products
-  HiPlus,  // أيقونة Add Product
-  HiUser,  // أيقونة Team
-} from "react-icons/hi";  // استيراد الأيقونات المطلوبة
-
+"use client";
+import { useState } from "react"; // لاستيراد useState
+import { Sidebar } from "flowbite-react"; // لاستيراد Sidebar من Flowbite
+import { HiHome, HiShoppingBag, HiPlus, HiUsers } from "react-icons/hi"; // أيقونات مناسبة
+import ProductsDashbord from "../../_components/ProductsDashbord/DashProd";
+import AddProdDash from "../../_components/AddProdDash/AddDash";
+import TeamsDash from "../../_components/TeamsDash/teamDash";
 export default function Page() {
+  const [activeTab, setActiveTab] = useState("dashboard"); // حالة لتحديد التبويب النشط
+
   return (
     <div className="grid grid-cols-12 pt-[150px]">
+      {/* Sidebar على اليسار */}
       <div className="col-span-3">
         <Sidebar
-          aria-label="Default sidebar example"
-          className="bg-[#232F3E] text-white h-full"
+          aria-label="Default sidebar"
+          className="bg-[#232F3E] text-white"
         >
           <Sidebar.Items>
             <Sidebar.ItemGroup>
               <Sidebar.Item
-                as={Link}  // استخدام as لتمرير مكون Link
-                href="/dashBord"  // تغيير الرابط إلى الصفحة المناسبة
-                icon={HiChartPie}
-                className="hover:bg-gray-600 hover:text-gray-200 py-2 px-4 rounded-md transition-colors duration-300"
+                onClick={() => setActiveTab("dashboard")} // تعيين التبويب النشط لـ "dashboard"
+                icon={HiHome}
+                className="cursor-pointer hover:bg-gray-600 hover:text-gray-200 py-2 px-4 rounded-md"
               >
                 Dashboard
               </Sidebar.Item>
               <Sidebar.Item
-                as={Link}
-                href="/products"
+                onClick={() => setActiveTab("products")} // تعيين التبويب النشط لـ "products"
                 icon={HiShoppingBag}
-                className="hover:bg-gray-600 hover:text-gray-200 py-2 px-4 rounded-md transition-colors duration-300"
+                className="cursor-pointer hover:bg-gray-600 hover:text-gray-200 py-2 px-4 rounded-md"
               >
                 Products
               </Sidebar.Item>
               <Sidebar.Item
-                as={Link}
-                href="/add-product"
+                onClick={() => setActiveTab("addProduct")} // تعيين التبويب النشط لـ "addProduct"
                 icon={HiPlus}
-                className="hover:bg-gray-600 hover:text-gray-200 py-2 px-4 rounded-md transition-colors duration-300"
+                className="cursor-pointer hover:bg-gray-600 hover:text-gray-200 py-2 px-4 rounded-md"
               >
                 Add Product
               </Sidebar.Item>
               <Sidebar.Item
-                as={Link}
-                href="/team"
-                icon={HiUser}
-                className="hover:bg-gray-600 hover:text-gray-200 py-2 px-4 rounded-md transition-colors duration-300"
+                onClick={() => setActiveTab("team")} // تعيين التبويب النشط لـ "team"
+                icon={HiUsers}
+                className="cursor-pointer hover:bg-gray-600 hover:text-gray-200 py-2 px-4 rounded-md"
               >
                 Team
               </Sidebar.Item>
@@ -55,9 +50,22 @@ export default function Page() {
           </Sidebar.Items>
         </Sidebar>
       </div>
-      <div className="col-span-9">
-        {/* هذا هو المكان المخصص للمحتوى الرئيسي */}
-        AAAAA
+
+      {/* المحتوى الرئيسي في الجهة اليمنى (9 أعمدة) */}
+      <div className="col-span-9 p-4">
+        {/* عرض المحتوى بناءً على التبويب النشط */}
+        {activeTab === "dashboard" && (
+          <div>
+            <h2 className="text-2xl font-bold">Dashboard Content</h2>
+            <p>This is the content for the Dashboard tab.</p>
+          </div>
+        )}
+
+        {activeTab === "products" && <ProductsDashbord />}
+
+        {activeTab === "addProduct" && <AddProdDash />}
+
+        {activeTab === "team" && <TeamsDash />}
       </div>
     </div>
   );
