@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import heroImg from "@/images/imgForHeroSection.png";
+import heroImg from "../../../images/imgForHeroSection.png";
 export default function Header() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 px-10 h-[auto] bg-[#9BFFF84D] pt-[156px] ">

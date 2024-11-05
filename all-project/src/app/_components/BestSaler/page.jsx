@@ -5,7 +5,7 @@ import { FaStar } from "react-icons/fa6";
 
 import Slider from "react-slick";
 import Image from "next/image";
-import img1 from "@/images/s1.jpg";
+import img1 from "../../../images/s1.jpg";
 import { Button } from "flowbite-react";
 
 export default function Best() {

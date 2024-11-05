@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
-import blueSale from '@/images/blueSale.png'
-import orangeSale from '@/images/orangeSale.png'
+import blueSale from '../../../images/blueSale.png'
+import orangeSale from '../../../images/orangeSale.png'
 export default function Offers() {
   return (
     <div className='container mx-auto px-4 py-8 my-[43px]'>
