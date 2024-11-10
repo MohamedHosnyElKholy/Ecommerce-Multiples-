@@ -2,10 +2,13 @@
 import React from "react";
 import Link from "next/link"; // تأكد من استيراد Link
 import { FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
-
+import { useSelector } from 'react-redux';
+import { store } from './../../store';
 export default function MyFooter() {
+  const {inDashboard} = useSelector((store)=>store.dashboardReducer)
   return (
-    <footer className="bg-gray-800 text-white p-6">
+    <>
+    {!inDashboard&&<footer className="bg-gray-800 text-white p-6">
       <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
         <div>
           <p className="text-[22px] text-white">ONE CART</p>
@@ -99,6 +102,8 @@ export default function MyFooter() {
           copy right 2024 Trademark, All rights reserved
         </p>
       </div>
-    </footer>
+    </footer>}
+    
+    </>
   );
 }

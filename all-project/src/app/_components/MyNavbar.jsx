@@ -8,10 +8,13 @@ import {
 } from "react-icons/ai";
 import NavTwo from "./NavTwo";
 import Link from "next/link";
+import { useSelector } from 'react-redux';
+import { store } from './../../store';
 export default function MyNavbar() {
+  const {inDashboard} = useSelector((store)=>store.dashboardReducer)
   return (
     <>
-    <div className='fixed top-0 left-0 right-0 z-[100]'>
+    {!inDashboard&&<div className='fixed top-0 left-0 right-0 z-[100]'>
       <Navbar className="bg-[#232F3E] flex justify-between items-center p-4 ">
         <Navbar.Brand className="text-white text-[32px] font-normal">
           ONE CART
@@ -38,7 +41,8 @@ export default function MyNavbar() {
         </div>
       </Navbar>
       <NavTwo />
-      </div>
+      </div>}
+    
     </>
   );
 }
