@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@next/font": "^14.2.15",
+    "@nivo/line": "^0.87.0",
+    "@nivo/pie": "^0.87.0",
     "@reduxjs/toolkit": "^2.3.0",
     "axios": "^1.7.7",
     "flowbite": "^2.5.2",
