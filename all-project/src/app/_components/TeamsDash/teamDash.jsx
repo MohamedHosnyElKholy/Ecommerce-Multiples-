@@ -51,8 +51,8 @@ export default function teamDash() {
           </div>
         </div>
 
-        {/* 4 divs under the navbar, using grid */}
-        <div className="container mx-auto">
+        {/* 3 divs under the navbar, using grid */}
+        <div className="container mx-auto bg-white my-[17px] rounded-[30px] teamShadow">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
             <div className="flex justify-center gap-10">
               <div className="w-[90px] h-[84px] rounded-[50%] teamIcon text-[42px] text-white flex justify-center items-center">
@@ -119,9 +119,9 @@ export default function teamDash() {
         </div>
 
         {/* members Table */}
-        <div className="overflow-x-auto p-6 teamShadow container mx-auto">
+        <div className="overflow-x-auto teamShadow container mx-auto rounded-[30px] mb-10 bg-white">
 
-          <div className="bg-white shadow-md border-b border-gray-300">
+          <div className="bg-white p-4">
             <div className="flex justify-between items-center p-4">
               {/* Left side - Welcome and Date/Time */}
               <div>
@@ -146,10 +146,10 @@ export default function teamDash() {
               </div>
             </div>
           </div>
-
-          <table className="min-w-full bg-white shadow-md rounded-lg text-left">
+          <div className='px-4 pb-8 bg-white'>
+          <table className="min-w-full text-left  ">
             <thead>
-              <tr className=" bg-white text-[14px] font-[500] leading-[21px] tracking-[-0.01em] text-[#B5B7C0]">
+              <tr className=" bg-white text-[14px] font-[500] leading-[21px] tracking-[-0.01em] text-[#B5B7C0]  border-b-[1px] border-[#EEEEEE]">
                 <th className="py-3 px-6 text-[12px]">Customer Name</th>
                 <th className="py-3 px-6 text-[12px]">Company</th>
                 <th className="py-3 px-6 text-[12px]">Phone Number</th>
@@ -161,7 +161,7 @@ export default function teamDash() {
             </thead>
             <tbody>
               {[...Array(8)].map((_, index) => (
-                <tr key={index}>
+                <tr key={index} className='border-b-[1px]'>
                   <td className="py-4 px-6 text-[14px] font-[500] leading-[21px] tracking-[-0.01em] text-[#292D32]">
                     <h3>Ibrahim Malek</h3>
                   </td>
@@ -184,9 +184,11 @@ export default function teamDash() {
               ))}
             </tbody>
           </table>
+          
           <div className='px-6 mt-10 flex items-center flex-col md:flex-row gap-4 justify-between'>
             <p className='text-[#B5B7C0] text-[14px] font-[500] leading-[21px] tracking-[-0.01em]'>Showing data 1 to 8 of  256K entries</p>
             <div><PaginationTeamDash /> </div>
+          </div>
           </div>
         </div>
       </div>
