@@ -9,39 +9,12 @@ import TeamsDash from "../../_components/TeamsDash/teamDash";
 import { useDispatch, useSelector } from "react-redux";
 import { FaDollarSign, FaGlobe } from "react-icons/fa";
 import { store } from "./../../../store";
-<<<<<<< HEAD
 import dashboardReducer, { setInDashboard } from "./../../feature/dashboardSlice";
-import { ResponsiveLine } from "@nivo/line"; // استيراد ResponsiveLine
-import { ResponsivePie } from "@nivo/pie"; // استيراد ResponsivePie
-
-// بيانات وهمية للرسوم البيانية
-const chartData = [
-  {
-    id: "sales",
-    data: [
-      { x: "2023-01", y: 100 },
-      { x: "2023-02", y: 120 },
-      { x: "2023-03", y: 130 },
-      { x: "2023-04", y: 140 },
-      { x: "2023-05", y: 150 },
-    ],
-  },
-];
-
-const chartDataTwo = [
-  { id: "ruby", value: 60 },
-  { id: "javascript", value: 30 },
-  { id: "python", value: 10 },
-];
-
-=======
-import dashboardReducer, {setInDashboard,} from "./../../feature/dashboardSlice";
-import { FaDollarSign, FaGlobe } from "react-icons/fa";
 import { ResponsiveLine } from "@nivo/line";
-import { chartData } from "./data";
+import { chartData } from "./data"; // التأكد أن البيانات موجودة في ملف منفصل
 import { ResponsivePie } from "@nivo/pie";
-import { chartDataTwo } from './dataTwo';
->>>>>>> aef3813349d700752c83e43ca9d6491359c58a6f
+import { chartDataTwo } from './dataTwo'; // التأكد من توفر البيانات أيضًا
+
 export default function Page() {
   const [activeTab, setActiveTab] = useState("dashboard"); // حالة لتحديد التبويب النشط
   const dispatch = useDispatch();
@@ -52,7 +25,7 @@ export default function Page() {
     return () => {
       dispatch(setInDashboard(false));
     };
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="grid grid-cols-12">
@@ -99,11 +72,8 @@ export default function Page() {
 
       {/* المحتوى الرئيسي في الجهة اليمنى (9 أعمدة) */}
       <div className="col-span-10 overflow-hidden bg-[#edeeee]">
-        {/* عرض المحتوى بناءً على التبويب النشط */}
-
-        {/* Main Content on the right */}
         <div className="col-span-1 md:col-span-10">
-          {/* Display content based on active tab */}
+          {/* عرض المحتوى بناءً على التبويب النشط */}
           {activeTab === "dashboard" && (
             <div className='p-6'>
               <div className="container mx-auto">
