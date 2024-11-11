@@ -46,21 +46,21 @@ export default function Page() {
               <Sidebar.Item
                 onClick={() => setActiveTab("products")}
                 icon={HiShoppingBag}
-                className="cursor-pointer hover:bg-gray-700 hover:text-gray-200 py-3 px-6 rounded-lg transition duration-200 ease-in-out"
+                className="cursor-pointer hover:bg-gray-700 text-white hover:text-gray-200 py-3 px-6 rounded-lg transition duration-200 ease-in-out"
               >
                 Products
               </Sidebar.Item>
               <Sidebar.Item
                 onClick={() => setActiveTab("addProduct")}
                 icon={HiPlus}
-                className="cursor-pointer hover:bg-gray-700 hover:text-gray-200 py-3 px-6 rounded-lg transition duration-200 ease-in-out"
+                className="cursor-pointer hover:bg-gray-700 text-white hover:text-gray-200 py-3 px-6 rounded-lg transition duration-200 ease-in-out"
               >
                 Add Product
               </Sidebar.Item>
               <Sidebar.Item
                 onClick={() => setActiveTab("team")}
                 icon={HiUsers}
-                className="cursor-pointer hover:bg-gray-700 hover:text-gray-200 py-3 px-6 rounded-lg transition duration-200 ease-in-out"
+                className="cursor-pointer hover:bg-gray-700 text-white hover:text-gray-200 py-3 px-6 rounded-lg transition duration-200 ease-in-out"
               >
                 Team
               </Sidebar.Item>
