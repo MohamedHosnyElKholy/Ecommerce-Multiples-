@@ -7,12 +7,36 @@ import ProductsDashbord from "../../_components/ProductsDashbord/DashProd";
 import AddProdDash from "../../_components/AddProdDash/AddDash";
 import TeamsDash from "../../_components/TeamsDash/teamDash";
 import { useDispatch, useSelector } from "react-redux";
+import { FaDollarSign, FaGlobe } from "react-icons/fa";
 import { store } from "./../../../store";
-import dashboardReducer, {setInDashboard,} from "./../../feature/dashboardSlice";
+import dashboardReducer, { setInDashboard } from "./../../feature/dashboardSlice";
+import { ResponsiveLine } from "@nivo/line"; // استيراد ResponsiveLine
+import { ResponsivePie } from "@nivo/pie"; // استيراد ResponsivePie
+
+// بيانات وهمية للرسوم البيانية
+const chartData = [
+  {
+    id: "sales",
+    data: [
+      { x: "2023-01", y: 100 },
+      { x: "2023-02", y: 120 },
+      { x: "2023-03", y: 130 },
+      { x: "2023-04", y: 140 },
+      { x: "2023-05", y: 150 },
+    ],
+  },
+];
+
+const chartDataTwo = [
+  { id: "ruby", value: 60 },
+  { id: "javascript", value: 30 },
+  { id: "python", value: 10 },
+];
+
 export default function Page() {
   const [activeTab, setActiveTab] = useState("dashboard"); // حالة لتحديد التبويب النشط
-  // const {inDashboard} = useSelector((store)=>store.dashboardReducer)
   const dispatch = useDispatch();
+  
   useEffect(() => {
     dispatch(setInDashboard(true));
 
@@ -290,7 +314,6 @@ export default function Page() {
           {/* Display content for other tabs */}
           {activeTab === "products" && <ProductsDashbord />}
           {activeTab === "addProduct" && <AddProdDash />}
-
           {activeTab === "team" && <TeamsDash />}
         </div>
       </div>
