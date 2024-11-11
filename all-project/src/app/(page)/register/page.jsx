@@ -1,8 +1,71 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { Button, Checkbox, Label, TextInput } from "flowbite-react";
+import { useFormik } from "formik";
+import axios from "axios";
+import * as Yup from "yup";
+import { toast } from "react-hot-toast";
+import { FaSpinner } from "react-icons/fa";
+import { useRouter } from 'next/navigation'
+const validationSchema = Yup.object({
+  firstName: Yup.string()
+    .required("First name is required")
+    .min(1, "First name must be at least 1 character"),
+  lastName: Yup.string()
+    .required("Last name is required")
+    .min(1, "Last name must be at least 1 character"),
+  email: Yup.string()
+    .email("Invalid email address")
+    .required("Email is required"),
+  password: Yup.string()
+    .required("Password is required")
+    .min(8, "Password must be at least 8 characters")
+    .matches(/[a-z]/, "Password must contain at least one lowercase letter")
+    .matches(/[A-Z]/, "Password must contain at least one uppercase letter")
+    .matches(/\d/, "Password must contain at least one number")
+    .matches(
+      /[!@#$%^&*(),.?":{}|<>]/,
+      "Password must contain at least one special character"
+    ),
+  confirmPassword: Yup.string()
+    .required("Confirm password is required")
+    .oneOf([Yup.ref("password"), null], "Passwords must match"),
+  agree: Yup.bool().oneOf([true], "You must agree to the terms and conditions"),
+});
+
 export default function Page() {
+  const router = useRouter()
+  const [loading, setloading] = useState(false);
+  async function handelReg(values) {
+    setloading(true);
+    try {
+      const response = await axios.post(
+        `http://matjr.runasp.net/api/Account/register`,
+        values
+      );
+      toast.success(response.data.message);
+      router.push("/login");
+    } catch (err) {
+      toast.error(err.response.data.message);
+    } finally {
+      setloading(false);
+    }
+  }
+
+  const formik = useFormik({
+    initialValues: {
+      confirmPassword: "",
+      email: "",
+      firstName: "",
+      lastName: "",
+      password: "",
+      agree: false,
+    },
+    validationSchema: validationSchema,
+    onSubmit: handelReg,
+  });
+
   return (
     <div className="register w-full flex flex-col justify-center items-center bg-gray-800 pt-[80px] pb-[80px]">
       <div className="content text-center mb-6">
@@ -14,92 +77,128 @@ export default function Page() {
           </Link>
         </p>
       </div>
-      <form className="flex max-w-md flex-col gap-4">
+      <form
+        className="flex max-w-md flex-col gap-4"
+        onSubmit={formik.handleSubmit}
+      >
+        {/* First Name */}
         <div>
           <div className="mb-2 block">
             <Label
-              htmlFor="email2"
+              htmlFor="firstName"
               value="First Name:"
               className="text-white text-[24px] font-normal"
             />
           </div>
           <TextInput
-            id="email2"
-            type="email"
+            id="firstName"
+            type="text"
             placeholder="Enter Your First Name"
-            required
             shadow
+            value={formik.values.firstName}
+            onChange={formik.handleChange}
           />
+          {formik.touched.firstName && formik.errors.firstName && (
+            <div className="text-red-500">{formik.errors.firstName}</div>
+          )}
         </div>
+
+        {/* Last Name */}
         <div>
           <div className="mb-2 block">
             <Label
-              htmlFor="password2"
+              htmlFor="lastName"
               value="Last Name:"
               className="text-white text-[24px] font-normal"
             />
           </div>
           <TextInput
-            id="password2"
-            type="password"
+            id="lastName"
+            type="text"
             placeholder="Enter Your Last Name"
-            required
             shadow
+            value={formik.values.lastName}
+            onChange={formik.handleChange}
           />
+          {formik.touched.lastName && formik.errors.lastName && (
+            <div className="text-red-500">{formik.errors.lastName}</div>
+          )}
         </div>
+
+        {/* Email */}
         <div>
           <div className="mb-2 block">
             <Label
-              htmlFor="repeat-password"
+              htmlFor="email"
               value="Email:"
               className="text-white text-[24px] font-normal"
             />
           </div>
           <TextInput
-            id="repeat-password"
-            type="password"
+            id="email"
+            type="email"
             placeholder="Enter Your Email"
-            required
             shadow
+            value={formik.values.email}
+            onChange={formik.handleChange}
           />
+          {formik.touched.email && formik.errors.email && (
+            <div className="text-red-500">{formik.errors.email}</div>
+          )}
         </div>
 
+        {/* Password */}
         <div>
           <div className="mb-2 block">
             <Label
-              htmlFor="repeat-password"
+              htmlFor="password"
               value="Password:"
               className="text-white text-[24px] font-normal"
             />
           </div>
           <TextInput
-            id="repeat-password"
+            id="password"
             type="password"
             placeholder="Enter Your Password"
-            required
             shadow
+            value={formik.values.password}
+            onChange={formik.handleChange}
           />
+          {formik.touched.password && formik.errors.password && (
+            <div className="text-red-500">{formik.errors.password}</div>
+          )}
         </div>
 
+        {/* Confirm Password */}
         <div>
           <div className="mb-2 block">
             <Label
-              htmlFor="repeat-password"
+              htmlFor="confirmPassword"
               value="Confirm Password:"
               className="text-white text-[24px] font-normal"
             />
           </div>
           <TextInput
-            id="repeat-password"
+            id="confirmPassword"
             type="password"
             placeholder="Re-type your password"
-            required
             shadow
+            value={formik.values.confirmPassword}
+            onChange={formik.handleChange}
           />
+          {formik.touched.confirmPassword && formik.errors.confirmPassword && (
+            <div className="text-red-500">{formik.errors.confirmPassword}</div>
+          )}
         </div>
 
+        {/* Checkbox */}
         <div className="flex items-center gap-2">
-          <Checkbox id="agree" className="text-[#F90]" />
+          <Checkbox
+            id="agree"
+            checked={formik.values.agree}
+            onChange={formik.handleChange}
+            className="text-[#F90]"
+          />
           <Label
             htmlFor="agree"
             className="flex text-white text-[24px] font-normal"
@@ -108,11 +207,15 @@ export default function Page() {
             <p className="text-[#F90] font-semibold">Terms & Conditions!</p>
           </Label>
         </div>
+        {formik.touched.agree && formik.errors.agree && (
+          <div className="text-red-500">{formik.errors.agree}</div>
+        )}
+
         <Button
           type="submit"
           className="bg-[#F90] text-white text-[24px] font-normal"
         >
-          Register
+          {loading ? <FaSpinner className="animate-spin mr-2" /> : "Register"}
         </Button>
       </form>
     </div>
