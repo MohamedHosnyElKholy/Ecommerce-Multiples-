@@ -1,10 +1,6 @@
 {
   "compilerOptions": {
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -26,10 +22,12 @@
     "next-env.d.ts",
     ".next/types/**/*.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "src/app/(page)/dashBord/data.js", "src/app/_components/TeamsDash/teamDash.jsx", "src/app/_components/ProductsDashbord/DashProd.jsx", "src/app/_components/AddProdDash/AddDash.jsx"  ],
+    "**/*.tsx",
+    "src/app/(page)/dashBord/data.js",
+    "src/app/_components/TeamsDash/teamDash.jsx",
+    "src/app/_components/ProductsDashbord/DashProd.jsx",
+    "src/app/_components/AddProdDash/AddDash.jsx"
+  ],
 
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }

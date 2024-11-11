@@ -9,6 +9,7 @@ import TeamsDash from "../../_components/TeamsDash/teamDash";
 import { useDispatch, useSelector } from "react-redux";
 import { FaDollarSign, FaGlobe } from "react-icons/fa";
 import { store } from "./../../../store";
+<<<<<<< HEAD
 import dashboardReducer, { setInDashboard } from "./../../feature/dashboardSlice";
 import { ResponsiveLine } from "@nivo/line"; // استيراد ResponsiveLine
 import { ResponsivePie } from "@nivo/pie"; // استيراد ResponsivePie
@@ -33,6 +34,14 @@ const chartDataTwo = [
   { id: "python", value: 10 },
 ];
 
+=======
+import dashboardReducer, {setInDashboard,} from "./../../feature/dashboardSlice";
+import { FaDollarSign, FaGlobe } from "react-icons/fa";
+import { ResponsiveLine } from "@nivo/line";
+import { chartData } from "./data";
+import { ResponsivePie } from "@nivo/pie";
+import { chartDataTwo } from './dataTwo';
+>>>>>>> aef3813349d700752c83e43ca9d6491359c58a6f
 export default function Page() {
   const [activeTab, setActiveTab] = useState("dashboard"); // حالة لتحديد التبويب النشط
   const dispatch = useDispatch();
@@ -89,24 +98,14 @@ export default function Page() {
       </div>
 
       {/* المحتوى الرئيسي في الجهة اليمنى (9 أعمدة) */}
-      <div className="col-span-10 p-4 overflow-hidden">
+      <div className="col-span-10 overflow-hidden bg-[#edeeee]">
         {/* عرض المحتوى بناءً على التبويب النشط */}
-        {activeTab === "dashboard" && (
-          <div>
-            <h2 className="text-2xl font-bold">Dashboard Content</h2>
-            <p>This is the content for the Dashboard tab.</p>
-          </div>
-        )}
-
-        {activeTab === "products" && <ProductsDashbord />}
-
-        {activeTab === "addProduct" && <AddProdDash />}
 
         {/* Main Content on the right */}
-        <div className="col-span-1 md:col-span-9 p-6">
+        <div className="col-span-1 md:col-span-10">
           {/* Display content based on active tab */}
           {activeTab === "dashboard" && (
-            <div>
+            <div className='p-6'>
               <div className="container mx-auto">
                 <div className="bg-white p-6 rounded-lg shadow-2xl">
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
