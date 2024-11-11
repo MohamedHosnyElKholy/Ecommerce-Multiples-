@@ -8,7 +8,7 @@ import * as Yup from "yup";
 import { login, setToken } from "../../lib/loginSlice"; // تأكد أن لديك هذا السلايس
 import { toast } from "react-hot-toast";
 import { FaSpinner } from "react-icons/fa";
-import { useRouter } from 'next/navigation'
+import { useRouter } from "next/navigation";
 
 const validationSchema = Yup.object({
   email: Yup.string()
@@ -31,7 +31,7 @@ export default function Page() {
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
-console.log(user)
+  console.log(user);
   async function handelReg(values) {
     setLoading(true);
     try {
@@ -40,8 +40,8 @@ console.log(user)
       if (response && response.payload) {
         // إذا كانت الاستجابة ناجحة، خزن التوكن
         toast.success("Login successful! 🎉");
-        localStorage.setItem('token', response.payload.data.token); // حفظ التوكن في الـ localStorage
-        dispatch(setToken(response.payload.data.token))
+        localStorage.setItem("token", response.payload.data.token); // حفظ التوكن في الـ localStorage
+        dispatch(setToken(response.payload.data.token));
         router.push("/"); // التوجيه إلى الصفحة الرئيسية بعد تسجيل الدخول
       } else {
         // في حالة عدم وجود استجابة صحيحة أو وجود خطأ
@@ -49,7 +49,9 @@ console.log(user)
       }
     } catch (error) {
       // التعامل مع الأخطاء بشكل عام (مثل عدم الوصول إلى الـ API)
-      toast.error("Login failed! Please check your credentials or try again later.");
+      toast.error(
+        "Login failed! Please check your credentials or try again later."
+      );
     } finally {
       setLoading(false);
     }
