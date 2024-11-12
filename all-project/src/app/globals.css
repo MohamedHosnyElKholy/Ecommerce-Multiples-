@@ -174,3 +174,46 @@ nav.dashboardNav > div{
 .paginationTeamDash button{
   color:black !important;
 }
+
+[type='text']:focus,select:focus,[type='number']:focus{
+  --tw-ring-color: #FF9900 !important;
+  border-color: #FF9900 !important;
+}
+
+.file-upload {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding-block: 8px;
+  padding-inline:12px ;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.file-upload input[type="text"] {
+  border: none;
+  outline: none;
+  flex: 1 1 0;
+  --tw-ring-color: white !important;
+  border-color: white !important;
+}
+
+.file-upload input[type="file"] {
+  display: none;
+}
+
+.file-button {
+  background-color: #FF9900;
+  color: white;
+  padding: 4px 16px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.dashFrom select.placeholder{
+  color:#d9d9d9;
+}
+.dashFrom select:not(.placeholder){
+  color:black;
+}
+
+
