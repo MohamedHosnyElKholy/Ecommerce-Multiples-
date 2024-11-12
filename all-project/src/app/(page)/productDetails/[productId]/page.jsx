@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import imageOne from "@/images/61D5zt-L8iL._AC_UL232_SR232,232_ 1.png";
+import imageOne from "@/images/phone.png";
 import { CiStar } from "react-icons/ci";
 import { Button, Card } from "flowbite-react";
 export default function page() {
@@ -47,26 +47,35 @@ export default function page() {
         </div>
       </div>
       <div className="container mx-auto mt-16 mb-48">
-        <h2 className="text-[32px] leading-[38.73px] md:ms-14 text-center md:text-left">Similar products</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-6 ">
-        {[...Array(3)].map((product,i)=>{
-          return <div key={i}>
-          <Card href="#" className="max-w-xs mx-auto card-hover">
-            <Image
-              src={imageOne}
-              alt="Product Image"
-              width={232}
-              height={232}
-            />
-            <p className="text-[22px] text-black">Kindle Paperwhite Premium</p>
-            <div className="flex justify-between">
-              <p className="text-[24px] text-black">Price:</p>
-              <p className="text-[24px] text-black">$500.00</p>
-            </div>
-            <Button className="pt-[10px] pb-[10px] text-[#fff] bg-[#ff9900]">Add To Cart</Button>
-          </Card>
-        </div>
-        })}
+        <h2 className="text-[32px] leading-[38.73px]  text-center md:text-left">
+          Similar products
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-6 gap-16">
+          {[...Array(3)].map((product, i) => {
+            return (
+              <div key={i}>
+                <Card href="#" className="mx-auto card-hover">
+                  <Image
+                    src={imageOne}
+                    alt="Product Image"
+                    width={240}
+                    height={240}
+                    className="mx-auto"
+                  />
+                  <p className="text-[22px] text-black my-4">
+                    Kindle Paperwhite Premium
+                  </p>
+                  <div className="flex justify-between my-4">
+                    <p className="text-[24px] text-black">Price:</p>
+                    <p className="text-[24px] text-black">$500.00</p>
+                  </div>
+                  <Button className="pt-[10px] pb-[10px] text-[#fff] bg-[#ff9900]">
+                    Add To Cart
+                  </Button>
+                </Card>
+              </div>
+            );
+          })}
         </div>
       </div>
     </>

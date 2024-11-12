@@ -1,5 +1,5 @@
 import React from "react";
-import imageOne from "@/images/61D5zt-L8iL._AC_UL232_SR232,232_ 1.png";
+import imageOne from "@/images/phone.png";
 import Image from "next/image";
 import { TextInput } from "flowbite-react";
 import { Button } from "flowbite-react";
@@ -33,9 +33,7 @@ export default function Page() {
                   <th scope="col" className="px-4 py-3 font-normal">
                     Total Price
                   </th>
-                  <th scope="col" className="px-4 py-3 font-normal">
-
-                  </th>
+                  <th scope="col" className="px-4 py-3 font-normal"></th>
                 </tr>
               </thead>
               <tbody>
@@ -55,17 +53,39 @@ export default function Page() {
                     <td className="py-4 font-normal text-black">$560.00</td>
                     <td className="py-4">
                       <div className="flex items-center justify-center">
-                        <button className="p-1 me-3 border rounded-full" type="button">
+                        <button
+                          className="p-1 me-3 border rounded-full"
+                          type="button"
+                        >
                           <span className="sr-only">Decrease Quantity</span>
-                          <svg className="w-3 h-3" fill="none" viewBox="0 0 18 2">
-                            <path stroke="currentColor" strokeWidth={2} d="M1 1h16" />
+                          <svg
+                            className="w-3 h-3"
+                            fill="none"
+                            viewBox="0 0 18 2"
+                          >
+                            <path
+                              stroke="currentColor"
+                              strokeWidth={2}
+                              d="M1 1h16"
+                            />
                           </svg>
                         </button>
                         <span>1</span>
-                        <button className="p-1 ms-3 border rounded-full" type="button">
+                        <button
+                          className="p-1 ms-3 border rounded-full"
+                          type="button"
+                        >
                           <span className="sr-only">Increase Quantity</span>
-                          <svg className="w-3 h-3" fill="none" viewBox="0 0 18 18">
-                            <path stroke="currentColor" strokeWidth={2} d="M9 1v16M1 9h16" />
+                          <svg
+                            className="w-3 h-3"
+                            fill="none"
+                            viewBox="0 0 18 18"
+                          >
+                            <path
+                              stroke="currentColor"
+                              strokeWidth={2}
+                              d="M9 1v16M1 9h16"
+                            />
                           </svg>
                         </button>
                       </div>
@@ -73,9 +93,9 @@ export default function Page() {
                     <td className="py-4 font-normal text-black">$560.00</td>
                     <td className="py-4 text-[24px] text-[#FF9900]">
                       <button>
-                      <FaRegTrashAlt />
+                        <FaRegTrashAlt />
                       </button>
-                      </td>
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -92,10 +112,14 @@ export default function Page() {
                 className="mb-3"
                 placeholder="Enter Your Coupon Code"
               />
-              <Button color="warning" className="w-full">Apply Now</Button>
+              <Button color="warning" className="w-full">
+                Apply Now
+              </Button>
             </div>
             <div className="bg-[#FFECB3] p-6 rounded-md mt-5">
-              <h4 className="font-semibold text-black mb-3">Your order summary</h4>
+              <h4 className="font-semibold text-black mb-3">
+                Your order summary
+              </h4>
               <div className="flex justify-between items-center mb-5">
                 <p className="text-sm font-medium">Total Order:</p>
                 <p className="text-sm font-medium">$705.00</p>
@@ -116,11 +140,19 @@ export default function Page() {
                 <p className="text-sm font-medium">Total:</p>
                 <p className="text-sm font-medium">$705</p>
               </div>
-              <Button className="w-full bg-[#232F3E] text-white mb-3">Checkout</Button>
-              <Button color="warning" className="w-full mb-3 flex items-center justify-center">
+              <Button className="w-full bg-[#232F3E] text-white mb-3">
+                Checkout
+              </Button>
+              <Button
+                color="warning"
+                className="w-full mb-3 flex items-center justify-center"
+              >
                 <IoLogoGoogle className="mr-2 text-2xl" /> Google Pay
               </Button>
-              <Button color="warning" className="w-full mb-3 flex items-center justify-center">
+              <Button
+                color="warning"
+                className="w-full mb-3 flex items-center justify-center"
+              >
                 <FaCcPaypal className="mr-2 text-2xl" /> PayPal
               </Button>
             </div>
@@ -129,7 +161,8 @@ export default function Page() {
         <div className="mt-20 mb-56">
           <h3 className="text-2xl font-bold">Shipping</h3>
           <p className="text-lg font-medium">
-            Arrives By WED, May 24 <span className="text-[#FF9900]">6 October - ElGiza</span>
+            Arrives By WED, May 24{" "}
+            <span className="text-[#FF9900]">6 October - ElGiza</span>
           </p>
         </div>
       </div>

@@ -3,9 +3,17 @@ import { useState } from "react";
 import Slider from "react-slick";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { Button, Card, Label, Radio, RangeSlider, Select, Pagination } from "flowbite-react";
+import {
+  Button,
+  Card,
+  Label,
+  Radio,
+  RangeSlider,
+  Select,
+  Pagination,
+} from "flowbite-react";
 import Image from "next/image";
-import imageOne from "../../../images/61D5zt-L8iL._AC_UL232_SR232,232_ 1.png";
+import imageOne from "../../../images/phone.png";
 
 export default function AllProducts() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -54,25 +62,52 @@ export default function AllProducts() {
         <div className="container p-4">
           <h4 className="text-black text-xl font-bold">New Releases:</h4>
           <div className="flex items-center gap-2">
-            <Radio id="last-30-days" name="filter" value="30days" defaultChecked />
-            <Label htmlFor="last-30-days" className="text-black text-lg font-normal">Last 30 Days</Label>
+            <Radio
+              id="last-30-days"
+              name="filter"
+              value="30days"
+              defaultChecked
+            />
+            <Label
+              htmlFor="last-30-days"
+              className="text-black text-lg font-normal"
+            >
+              Last 30 Days
+            </Label>
           </div>
           <div className="flex items-center gap-2">
             <Radio id="last-60-days" name="filter" value="60days" />
-            <Label htmlFor="last-60-days" className="text-black text-lg font-normal">Last 60 Days</Label>
+            <Label
+              htmlFor="last-60-days"
+              className="text-black text-lg font-normal"
+            >
+              Last 60 Days
+            </Label>
           </div>
           <h4 className="text-black text-xl font-bold">Categories:</h4>
           <div className="flex items-center gap-2 mb-3">
             <Radio id="allProduct" name="category" value="all" />
-            <Label htmlFor="allProduct" className="text-black text-lg font-normal">All Products</Label>
+            <Label
+              htmlFor="allProduct"
+              className="text-black text-lg font-normal"
+            >
+              All Products
+            </Label>
           </div>
           <div className="flex items-center gap-2 mb-3">
             <Radio id="clothes" name="category" value="clothes" />
-            <Label htmlFor="clothes" className="text-black text-lg font-normal">Clothes</Label>
+            <Label htmlFor="clothes" className="text-black text-lg font-normal">
+              Clothes
+            </Label>
           </div>
           <div className="flex items-center gap-2 mb-3">
             <Radio id="electronics" name="category" value="electronics" />
-            <Label htmlFor="electronics" className="text-black text-lg font-normal">Electronics</Label>
+            <Label
+              htmlFor="electronics"
+              className="text-black text-lg font-normal"
+            >
+              Electronics
+            </Label>
           </div>
           <h4 className="text-black text-xl font-bold">Price Range:</h4>
           <div className="flex justify-between mb-3">
@@ -80,67 +115,82 @@ export default function AllProducts() {
             <p className="text-lg text-black font-bold">$4000.00</p>
           </div>
           <RangeSlider id="price-range" sizing="lg" />
-          <h4 className="text-black text-xl font-bold mb-3">Customer Reviews:</h4>
+          <h4 className="text-black text-xl font-bold mb-3">
+            Customer Reviews:
+          </h4>
           <div className="flex items-center gap-2 mb-3">
             <Radio id="allProduct" name="category" value="all" />
-            <Label htmlFor="allProduct" className="text-black text-lg font-normal">All Products</Label>
+            <Label
+              htmlFor="allProduct"
+              className="text-black text-lg font-normal"
+            >
+              All Products
+            </Label>
           </div>
           <div className="flex items-center gap-6">
             <div className="flex gap-3">
-              <AiFillStar className="text-[#F90]"/>
-              <AiFillStar className="text-[#F90]"/>
-              <AiFillStar className="text-[#F90]"/>
-              <AiFillStar className="text-[#F90]"/>
-              <AiOutlineStar/>
+              <AiFillStar className="text-[#F90]" />
+              <AiFillStar className="text-[#F90]" />
+              <AiFillStar className="text-[#F90]" />
+              <AiFillStar className="text-[#F90]" />
+              <AiOutlineStar />
             </div>
             <p className="text-[22px] font-normal  text-black">& Up</p>
           </div>
           <div className="flex items-center gap-6">
             <div className="flex gap-3">
-              <AiFillStar className="text-[#F90]"/>
-              <AiFillStar className="text-[#F90]"/>
-              <AiFillStar className="text-[#F90]"/>
-              <AiOutlineStar/>
-              <AiOutlineStar/>
+              <AiFillStar className="text-[#F90]" />
+              <AiFillStar className="text-[#F90]" />
+              <AiFillStar className="text-[#F90]" />
+              <AiOutlineStar />
+              <AiOutlineStar />
             </div>
             <p className="text-[22px] font-normal  text-black">& Up</p>
           </div>
           <div className="flex items-center gap-6">
             <div className="flex gap-3">
-              <AiFillStar className="text-[#F90]"/>
-              <AiFillStar className="text-[#F90]"/>
-              <AiOutlineStar/>
-              <AiOutlineStar/>
-              <AiOutlineStar/>
+              <AiFillStar className="text-[#F90]" />
+              <AiFillStar className="text-[#F90]" />
+              <AiOutlineStar />
+              <AiOutlineStar />
+              <AiOutlineStar />
             </div>
             <p className="text-[22px] font-normal  text-black">& Up</p>
           </div>
           <div className="flex items-center gap-6">
             <div className="flex gap-3">
-              <AiFillStar className="text-[#F90]"/>
-              <AiOutlineStar/>
-              <AiOutlineStar/>
-              <AiOutlineStar/>
-              <AiOutlineStar/>
+              <AiFillStar className="text-[#F90]" />
+              <AiOutlineStar />
+              <AiOutlineStar />
+              <AiOutlineStar />
+              <AiOutlineStar />
             </div>
             <p className="text-[22px] font-normal  text-black">& Up</p>
           </div>
           <h4 className="text-black text-xl font-bold mb-3">Discount:</h4>
           <div className="flex items-center gap-2 mb-3">
             <Radio id="all" name="category" value="all" />
-            <Label htmlFor="all" className="text-black text-lg font-normal">All</Label>
+            <Label htmlFor="all" className="text-black text-lg font-normal">
+              All
+            </Label>
           </div>
           <div className="flex items-center gap-2 mb-3">
             <Radio id="ten" name="category" value="all" />
-            <Label htmlFor="ten" className="text-black text-lg font-normal">10% or more</Label>
+            <Label htmlFor="ten" className="text-black text-lg font-normal">
+              10% or more
+            </Label>
           </div>
           <div className="flex items-center gap-2 mb-3">
             <Radio id="tewinty" name="category" value="all" />
-            <Label htmlFor="tewinty" className="text-black text-lg font-normal">20% or more</Label>
+            <Label htmlFor="tewinty" className="text-black text-lg font-normal">
+              20% or more
+            </Label>
           </div>
           <div className="flex items-center gap-2 mb-3">
             <Radio id="therty" name="category" value="all" />
-            <Label htmlFor="therty" className="text-black text-lg font-normal">30% or more</Label>
+            <Label htmlFor="therty" className="text-black text-lg font-normal">
+              30% or more
+            </Label>
           </div>
         </div>
       </div>
@@ -177,19 +227,23 @@ export default function AllProducts() {
           {[...Array(8)].map((_, index) => (
             <div key={index}>
               <Card href="#" className="max-w-xs card-hover relative">
-              <div className="bestSelling"></div>
+                <div className="bestSelling"></div>
                 <Image
                   src={imageOne}
                   alt="Product Image"
                   width={232}
                   height={232}
                 />
-                <p className="text-[22px] text-black">Kindle Paperwhite Premium</p>
+                <p className="text-[22px] text-black">
+                  Kindle Paperwhite Premium
+                </p>
                 <div className="flex justify-between">
                   <p className="text-[24px] text-black">Price:</p>
                   <p className="text-[24px] text-black">$500.00</p>
                 </div>
-                <Button className="pt-[10px] pb-[10px] text-[#fff] bg-[#ff9900]">Add To Cart</Button>
+                <Button className="pt-[10px] pb-[10px] text-[#fff] bg-[#ff9900]">
+                  Add To Cart
+                </Button>
               </Card>
             </div>
           ))}
