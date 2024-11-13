@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Slider from "react-slick";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
@@ -14,8 +14,14 @@ import {
 } from "flowbite-react";
 import Image from "next/image";
 import imageOne from "../../../images/phone.png";
+import { redirect } from "next/navigation";
 
 export default function AllProducts() {
+  useEffect(() => {
+    if (!localStorage.getItem('token')) {
+      redirect('/login') // التوجيه هنا
+    }
+  }, []) // المصفوفة الفارغة تعني أنه سيتم التحقق من التوكن عند تحميل الصفحة فقط
   const [currentPage, setCurrentPage] = useState(1);
 
   const onPageChange = (page) => setCurrentPage(page);

@@ -1,10 +1,16 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { Card, Checkbox, Label, TextInput } from "flowbite-react"; // إصلاح الاستيراد
 import Image from "next/image";
 import imageOne from "../../../images/e1f08393-359b-440d-8eba-75ac5c83168b-cover 1.png";
+import { redirect } from "next/navigation";
 
 export default function Page() {
+  useEffect(() => {
+    if (!localStorage.getItem('token')) {
+      redirect('/login') // التوجيه هنا
+    }
+  }, []) // المصفوفة الفارغة تعني أنه سيتم التحقق من التوكن عند تحميل الصفحة فقط
   return (
     <div className="flex items-center justify-center pt-[100px] min-h-screen">
       <div className="container mx-auto px-4">

@@ -14,8 +14,14 @@ import { ResponsiveLine } from "@nivo/line";
 import { chartData } from "./data"; // التأكد أن البيانات موجودة في ملف منفصل
 import { ResponsivePie } from "@nivo/pie";
 import { chartDataTwo } from './dataTwo'; // التأكد من توفر البيانات أيضًا
+import { redirect } from "next/navigation";
 
 export default function Page() {
+  useEffect(() => {
+    if (!localStorage.getItem('token')) {
+      redirect('/login') // التوجيه هنا
+    }
+  }, []) // المصفوفة الفارغة تعني أنه سيتم التحقق من التوكن عند تحميل الصفحة فقط
   const [activeTab, setActiveTab] = useState("dashboard"); // حالة لتحديد التبويب النشط
   const dispatch = useDispatch();
   

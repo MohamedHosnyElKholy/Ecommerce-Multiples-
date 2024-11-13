@@ -1,12 +1,18 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import image from "../../../images/logos_visaelectron.svg";
 import imageOne from "@/images/phone.png";
 import { Accordion, Button } from "flowbite-react";
 import { FaFileInvoice } from "react-icons/fa";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 export default function page() {
+  useEffect(() => {
+    if (!localStorage.getItem('token')) {
+      redirect('/login') // التوجيه هنا
+    }
+  }, []) // المصفوفة الفارغة تعني أنه سيتم التحقق من التوكن عند تحميل الصفحة فقط
   return (
     <>
       <div className="container p-[200px] mx-auto">

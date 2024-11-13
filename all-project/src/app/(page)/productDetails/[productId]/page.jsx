@@ -1,9 +1,15 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import imageOne from "@/images/phone.png";
 import { CiStar } from "react-icons/ci";
 import { Button, Card } from "flowbite-react";
+import { redirect } from "next/navigation";
 export default function page() {
+  useEffect(() => {
+    if (!localStorage.getItem('token')) {
+      redirect('/login') // التوجيه هنا
+    }
+  }, []) // المصفوفة الفارغة تعني أنه سيتم التحقق من التوكن عند تحميل الصفحة فقط
   return (
     <>
       <div className="container mx-auto">

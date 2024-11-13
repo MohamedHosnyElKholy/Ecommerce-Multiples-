@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import imageOne from "@/images/phone.png";
 import Image from "next/image";
 import { TextInput } from "flowbite-react";
@@ -6,7 +6,13 @@ import { Button } from "flowbite-react";
 import { IoLogoGoogle } from "react-icons/io5";
 import { FaCcPaypal } from "react-icons/fa";
 import { FaRegTrashAlt } from "react-icons/fa";
+import { redirect } from "next/navigation";
 export default function Page() {
+  useEffect(() => {
+    if (!localStorage.getItem('token')) {
+      redirect('/login') // التوجيه هنا
+    }
+  }, []) // المصفوفة الفارغة تعني أنه سيتم التحقق من التوكن عند تحميل الصفحة فقط
   return (
     <>
       <div className="container mx-auto pt-[200px]">

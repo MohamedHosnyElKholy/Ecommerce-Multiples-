@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { Button, Checkbox, Label, TextInput } from "flowbite-react";
 import { useFormik } from "formik";
@@ -7,7 +7,7 @@ import axios from "axios";
 import * as Yup from "yup";
 import { toast } from "react-hot-toast";
 import { FaSpinner } from "react-icons/fa";
-import { useRouter } from 'next/navigation'
+import { redirect, useRouter } from 'next/navigation'
 const validationSchema = Yup.object({
   firstName: Yup.string()
     .required("First name is required")
@@ -35,6 +35,11 @@ const validationSchema = Yup.object({
 });
 
 export default function Page() {
+  useEffect(() => {
+    if (localStorage.getItem('token')) {
+      redirect('/') // التوجيه هنا
+    }
+  }, []) // المصفوفة الفارغة تعني أنه سيتم التحقق من التوكن عند تحميل الصفحة فقط
   const router = useRouter()
   const [loading, setloading] = useState(false);
   async function handelReg(values) {
