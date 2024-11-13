@@ -33,6 +33,11 @@ export default function Page() {
   const { user } = useSelector((state) => state.auth);
   console.log(user);
   async function handelReg(values) {
+    useEffect(() => {
+      if (localStorage.getItem('token')) {
+        redirect('/') // التوجيه هنا
+      }
+    }, []) // المصفوفة الفارغة تعني أنه سيتم التحقق من التوكن عند تحميل الصفحة فقط
     setLoading(true);
     try {
       // إرسال البيانات إلى الـ API لتسجيل الدخول
