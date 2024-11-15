@@ -15,15 +15,18 @@ import { chartData } from "./data"; // التأكد أن البيانات موج
 import { ResponsivePie } from "@nivo/pie";
 import { chartDataTwo } from './dataTwo'; // التأكد من توفر البيانات أيضًا
 import { redirect } from "next/navigation";
+import { setToken } from '@/app/lib/loginSlice';
 
 export default function Page() {
+  const dispatch = useDispatch();
+  const [activeTab, setActiveTab] = useState("dashboard"); // حالة لتحديد التبويب النشط
+  const token = localStorage.getItem('token');
   useEffect(() => {
     if (!localStorage.getItem('token')) {
       redirect('/login') // التوجيه هنا
     }
+    dispatch(setToken(token));
   }, []) // المصفوفة الفارغة تعني أنه سيتم التحقق من التوكن عند تحميل الصفحة فقط
-  const [activeTab, setActiveTab] = useState("dashboard"); // حالة لتحديد التبويب النشط
-  const dispatch = useDispatch();
   
   useEffect(() => {
     dispatch(setInDashboard(true));

@@ -7,11 +7,17 @@ import { Accordion, Button } from "flowbite-react";
 import { FaFileInvoice } from "react-icons/fa";
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import { useDispatch } from "react-redux";
+import { setToken } from '@/app/lib/loginSlice';
+
 export default function page() {
+  const dispatch = useDispatch();
+  const token = localStorage.getItem('token');
   useEffect(() => {
     if (!localStorage.getItem('token')) {
       redirect('/login') // التوجيه هنا
     }
+    dispatch(setToken(token));
   }, []) // المصفوفة الفارغة تعني أنه سيتم التحقق من التوكن عند تحميل الصفحة فقط
   return (
     <>

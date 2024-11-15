@@ -1,12 +1,18 @@
+'use client'
 
+import { setToken } from '@/app/lib/loginSlice';
 import { redirect } from 'next/navigation'
 import React, { useEffect } from 'react'
+import { useDispatch } from 'react-redux';
 
 export default function Offers() {
+  const dispatch = useDispatch();
+  const token = localStorage.getItem('token');
   useEffect(() => {
     if (!localStorage.getItem('token')) {
       redirect('/login') // التوجيه هنا
     }
+    dispatch(setToken(token));
   }, []) // المصفوفة الفارغة تعني أنه سيتم التحقق من التوكن عند تحميل الصفحة فقط
   return (
     <div >

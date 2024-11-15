@@ -15,12 +15,17 @@ import {
 import Image from "next/image";
 import imageOne from "../../../images/phone.png";
 import { redirect } from "next/navigation";
+import { useDispatch } from "react-redux";
+import { setToken } from "@/app/lib/loginSlice";
 
 export default function AllProducts() {
+  const dispatch = useDispatch();
+  const token = localStorage.getItem('token');
   useEffect(() => {
     if (!localStorage.getItem('token')) {
       redirect('/login') // التوجيه هنا
     }
+    dispatch(setToken(token));
   }, []) // المصفوفة الفارغة تعني أنه سيتم التحقق من التوكن عند تحميل الصفحة فقط
   const [currentPage, setCurrentPage] = useState(1);
 

@@ -1,14 +1,22 @@
+'use client'
+
 import Image from "next/image";
 import React, { useEffect } from "react";
 import imageOne from "@/images/phone.png";
 import { CiStar } from "react-icons/ci";
 import { Button, Card } from "flowbite-react";
 import { redirect } from "next/navigation";
+import { useDispatch } from "react-redux";
+import { setToken } from '@/app/lib/loginSlice';
+
 export default function page() {
+  const dispatch = useDispatch();
+  const token = localStorage.getItem('token');
   useEffect(() => {
     if (!localStorage.getItem('token')) {
       redirect('/login') // التوجيه هنا
     }
+    dispatch(setToken(token));
   }, []) // المصفوفة الفارغة تعني أنه سيتم التحقق من التوكن عند تحميل الصفحة فقط
   return (
     <>

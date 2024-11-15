@@ -4,12 +4,17 @@ import { Card, Checkbox, Label, TextInput } from "flowbite-react"; // إصلاح
 import Image from "next/image";
 import imageOne from "../../../images/e1f08393-359b-440d-8eba-75ac5c83168b-cover 1.png";
 import { redirect } from "next/navigation";
+import { useDispatch } from "react-redux";
+import { setToken } from '@/app/lib/loginSlice';
 
 export default function Page() {
+  const dispatch = useDispatch();
+  const token = localStorage.getItem('token');
   useEffect(() => {
     if (!localStorage.getItem('token')) {
       redirect('/login') // التوجيه هنا
     }
+    dispatch(setToken(token));
   }, []) // المصفوفة الفارغة تعني أنه سيتم التحقق من التوكن عند تحميل الصفحة فقط
   return (
     <div className="flex items-center justify-center pt-[100px] min-h-screen">

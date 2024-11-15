@@ -1,3 +1,4 @@
+'use client'
 import React, { useEffect } from "react";
 import imageOne from "@/images/phone.png";
 import Image from "next/image";
@@ -7,11 +8,17 @@ import { IoLogoGoogle } from "react-icons/io5";
 import { FaCcPaypal } from "react-icons/fa";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { redirect } from "next/navigation";
+import { useDispatch } from "react-redux";
+import { setToken } from '@/app/lib/loginSlice';
+
 export default function Page() {
+  const dispatch = useDispatch();
+  const token = localStorage.getItem('token');
   useEffect(() => {
     if (!localStorage.getItem('token')) {
       redirect('/login') // التوجيه هنا
     }
+    dispatch(setToken(token));
   }, []) // المصفوفة الفارغة تعني أنه سيتم التحقق من التوكن عند تحميل الصفحة فقط
   return (
     <>

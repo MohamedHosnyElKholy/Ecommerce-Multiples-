@@ -75,7 +75,7 @@ export default function MyNavbar() {
               <NavTwo />
             </div>
           ) : (
-            <div className="fixed top-0 left-0 right-0 z-[100]">
+            <div className="fixed top-0 left-0 right-0 z-[100] hidden">
               {/* Navbar للمستخدم غير المسجل */}
               <Navbar className="bg-[#232F3E] flex justify-between items-center p-4">
                 {/* الشعار في الجهة اليسرى */}

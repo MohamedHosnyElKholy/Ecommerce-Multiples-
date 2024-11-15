@@ -8,7 +8,7 @@ import * as Yup from "yup";
 import { login, setToken } from "../../lib/loginSlice"; // تأكد أن لديك هذا السلايس
 import { toast } from "react-hot-toast";
 import { FaSpinner } from "react-icons/fa";
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 
 const validationSchema = Yup.object({
   email: Yup.string()
@@ -27,17 +27,17 @@ const validationSchema = Yup.object({
 });
 
 export default function Page() {
+      useEffect(() => {
+      if (localStorage.getItem('token')) {
+        redirect('/') // التوجيه هنا
+      }
+    }, []) // المصفوفة الفارغة تعني أنه سيتم التحقق من التوكن عند تحميل الصفحة فقط
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
   console.log(user);
   async function handelReg(values) {
-    useEffect(() => {
-      if (localStorage.getItem('token')) {
-        redirect('/') // التوجيه هنا
-      }
-    }, []) // المصفوفة الفارغة تعني أنه سيتم التحقق من التوكن عند تحميل الصفحة فقط
     setLoading(true);
     try {
       // إرسال البيانات إلى الـ API لتسجيل الدخول
