@@ -1,6 +1,5 @@
 "use client";
 import { Button, Label, TextInput } from "flowbite-react";
-import Link from "next/link";
 import { redirect } from "next/navigation";
 import React, { useEffect } from "react";
 
@@ -15,11 +14,10 @@ export default function Page() {
     <div className="register w-full flex flex-col justify-center items-center bg-gray-800 pt-[80px] pb-[80px] h-[100vh]">
       <div className="content text-center mb-6">
         <h4 className="text-white text-[40px] font-normal">
-          Forgot your password
+          Rest account password
         </h4>
-        <p className="text-white text-[20px] font-normal">
-          Please enter the email address you’d <br/> like your password reset
-          information <br/> sent to.
+        <p className="text-white text-[24px] font-normal">
+          Enter a new password for example@email.com
         </p>
       </div>
       <form className="flex w-full max-w-md flex-col gap-4">
@@ -27,14 +25,30 @@ export default function Page() {
           <div className="mb-2 block">
             <Label
               htmlFor="email"
-              value="Enter email address:"
+              value="Password:"
+              className="text-white text-[24px] font-normal"
+            />
+          </div>
+          <TextInput
+            id="email"
+            type="password"
+            placeholder="Password"
+            shadow
+            className="w-full"
+          />
+        </div>
+        <div>
+          <div className="mb-2 block">
+            <Label
+              htmlFor="password"
+              value="Confim Password"
               className="text-white text-[24px] font-normal"
             />
           </div>
           <TextInput
             id="email"
             type="email"
-            placeholder="example@email.com"
+            placeholder="Confim Password"
             shadow
             className="w-full"
           />
@@ -43,11 +57,8 @@ export default function Page() {
           type="submit"
           className="bg-[#F90] text-white text-[24px] font-normal"
         >
-          Request reset link
+          Reset Password
         </Button>
-        <Link href={"/login"} className="text-[#FF9900] text-[24px] font-bold text-center">
-          Back To Login
-        </Link>
       </form>
     </div>
   );
