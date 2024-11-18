@@ -7,7 +7,7 @@ import { FaEnvelope } from "react-icons/fa";
 export default function CheckEmail() {
     useEffect(() => {
         if (localStorage.getItem("token")) {
-          redirect("/"); // التوجيه هنا
+          redirect("/");
         }
       }, []);
   return (
@@ -21,7 +21,7 @@ export default function CheckEmail() {
         Please Check your email inbox for instructions on how to reset your password
         </p>
       </div>
-        <button className='bg-[#FF9900] text-[24px] text-left font-[400] leading-[29.05px] px-[18px] rounded-[6px] py-[8px] max-w-[346px]'>Didin’t get email? Try again</button>
+        <button className='bg-[#FF9900] hover:bg-[#ff9900de] text-[24px] text-left font-[400] leading-[29.05px] px-[18px] rounded-[6px] py-[8px] max-w-[346px]'>Didin’t get email? Try again</button>
         <Link href='/login' className='text-[24px] font-[400] leading-[29.05px] text-[#FF9900]'>Back To Login</Link>
       </div>
   )
