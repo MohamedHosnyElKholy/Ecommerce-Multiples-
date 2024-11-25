@@ -215,5 +215,15 @@ nav.dashboardNav > div{
 .dashFrom select:not(.placeholder){
   color:black;
 }
+.userImgProfile{
+  width: 70px;
+  height: 70px;
+  background-color:#FF9900;
+  border-radius:50%;
+  font-size:25px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
 
 

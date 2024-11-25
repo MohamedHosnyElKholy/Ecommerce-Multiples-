@@ -26,7 +26,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx",
-    "src/app/(page)/dashBord/data.js",
+    "src/app/(page)/dashBoard/data.js",
     "src/app/_components/TeamsDash/teamDash.jsx",
     "src/app/_components/ProductsDashbord/DashProd.jsx",
     "src/app/_components/AddProdDash/AddDash.jsx"

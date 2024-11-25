@@ -12,7 +12,7 @@ import {
 import NavTwo from "./NavTwo";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { clearToken } from "../lib/loginSlice";
+import { clearToken, setToken } from "../lib/loginSlice";
 
 export default function MyNavbar() {
   const dispatch = useDispatch();
@@ -27,6 +27,11 @@ export default function MyNavbar() {
       setAuthoNav(false);
     }
   }, [token]);
+  useEffect(() => {
+    if (localStorage.getItem('token')) {
+      dispatch(setToken(localStorage.getItem('token')));
+    } 
+  }, []);
 
   const route = useRouter();
 
@@ -43,8 +48,8 @@ export default function MyNavbar() {
       {!inDashboard && (
         <>
           {authoNav ? (
-            <div className="fixed top-0 left-0 right-0 z-[100]">
-              <Navbar className="bg-[#232F3E] flex justify-between items-center p-4">
+            <div className=" ">
+              <Navbar className="bg-[#232F3E] flex justify-between items-center p-4 z-[100] fixed top-0 left-0 right-0 ">
                 <Navbar.Brand className="text-white text-[32px] font-normal">
                   ONE CART
                 </Navbar.Brand>

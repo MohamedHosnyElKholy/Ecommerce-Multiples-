@@ -22,7 +22,7 @@ export default function NavTwo() {
     fluid
     rounded
     style={{ padding: "10px 9px", backgroundColor: "white" }}
-    className="flex justify-center items-center secondNav"
+    className="flex justify-center items-center secondNav z-[20] fixed top-[80px] left-0 right-0"
   >
     <Navbar.Toggle onClick={() => setNavbarOpen(!navbarOpen)} />
     <Navbar.Collapse
